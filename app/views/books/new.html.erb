@@ -1,0 +1,12 @@
+<%= form_with(model: @book, local: true) do |form| %>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  
+    <%= form.label :release_date %>
+    <%= form.date_field :release_date %>
+  
+    <%= form.label :author_id %>
+    <%= form.collection_select :author_id, Auther.all, :id, :name %>
+  
+    <%= form.submit %>
+  <% end %>
