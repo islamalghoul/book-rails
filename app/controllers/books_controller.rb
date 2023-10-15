@@ -31,9 +31,11 @@ class BooksController < ApplicationController
     end
 
     def show
+      
     end
 
     def destroy
+      puts "helllllllllllllllllllllllllllllllllo"
       @book.destroy
       redirect_to books_path
     end
