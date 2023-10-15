@@ -1,5 +1,5 @@
 class Book < ApplicationRecord
-  belongs_to :author
+  belongs_to :auther
   validates :name, presence: true
   validates :release_date, presence: true
   validate :release_date_not_in_future

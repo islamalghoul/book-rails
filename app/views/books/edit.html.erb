@@ -1,6 +1,10 @@
 <h1>Editing Book</h1>
-
+<br/>
 <%= render 'form', book: @book %>
 
-<%= link_to 'Show', @book %> |
-<%= link_to 'Back', books_path %>
+<br/>
+<%= link_to 'Show', @book, class: "btn btn-secondary" %>
+
+<%= link_to 'Delete', @book, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+
+<%= link_to 'Back', books_path, class: "btn btn-dark" %>
