@@ -5,8 +5,8 @@
     <%= form.label :release_date %>
     <%= form.date_field :release_date %>
   
-    <%= form.label :author_id %>
-    <%= form.collection_select :author_id, Auther.all, :id, :name %>
+    <%= form.label :auther_id %>
+    <%= form.collection_select :auther_id, Auther.all, :id, :name %>
   
     <%= form.submit %>
   <% end %>
