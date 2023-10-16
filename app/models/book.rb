@@ -1,6 +1,6 @@
 class Book < ApplicationRecord
   belongs_to :auther
-  validates :name, presence: true
+  validates :name, presence: true  , uniqueness: true
   validates :release_date, presence: true
   validate :release_date_not_in_future
 

@@ -1,4 +1,15 @@
-<div class="jumbotron">
+<% if auther_signed_in? %>
+<br>
+<br>
+<br>
+<br>
+<br>
+<% if flash[:success]%>
+
+<%= flash[:success]%>
+<%end%>
+
+<div class="jumbotron text-center">
   <h1 class="display-4">
     <%= @book.name %>
   </h1>
@@ -9,12 +20,23 @@
     Author: <%= @book.auther.name %>
   </p>
 
-  <br>
-  <%= link_to 'Delete', book_path(@book), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
-<br>
-  <%= link_to 'Edit', edit_book_path(@book), class: "btn btn-secondary" %>
+  <%= link_to 'Show', @book, class: "btn btn-secondary" %>
 
-<br>
+  <%= link_to 'Delete', @book, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
 
   <%= link_to 'Back', books_path, class: "btn btn-dark" %>
 </div>
+
+
+
+
+
+<%else%>
+<script>
+    window.location.href = '<%= new_auther_session_path %>';
+  </script>
+<% end %>
+
+<footer class="bg-dark text-white text-center py-3 fixed-bottom">
+  <p>&copy; 2023 Your Bookstore</p>
+</footer>
