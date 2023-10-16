@@ -191,6 +191,7 @@ GEM
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
     sqlite3 (1.6.7-x64-mingw-ucrt)
+    sweetalert2-rails (0.1.1)
     thor (1.2.2)
     tilt (2.3.0)
     timeout (0.4.0)
@@ -232,7 +233,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)
-  devise (~> 4.9, >= 4.9.3)
+  devise (~> 4.9, >= 4.9.2)
   jbuilder (~> 2.7)
   puma (~> 5.0)
   rack-mini-profiler (~> 2.0)
@@ -240,6 +241,7 @@ DEPENDENCIES
   sass-rails (>= 6)
   selenium-webdriver
   sqlite3 (~> 1.4)
+  sweetalert2-rails
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 4.1.0)

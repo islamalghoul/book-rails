@@ -11,7 +11,7 @@ class BooksController < ApplicationController
 
     def create
       @book = Book.new(book_params)
-      @book[:auther_id]=@book[:auther_id].to_i
+      @book.auther = current_auther
       if @book.save
         redirect_to @book
       else
@@ -23,15 +23,18 @@ class BooksController < ApplicationController
     end
 
     def update
+      @book = Book.find(params[:id])
       if @book.update(book_params)
+        flash[:success] = "Book was successfully updated."
         redirect_to @book
       else
+        flash.now[:error] = "Failed to update the book."
         render 'edit'
       end
     end
 
     def show
-      
+
     end
 
     def destroy

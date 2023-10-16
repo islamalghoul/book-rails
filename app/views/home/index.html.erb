@@ -1,2 +1,71 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<body style="background-color:rgb(229, 228, 226);">
+<br>
+<br>
+<header class="text-white p-5" style="background-color: rgb(211, 211, 211);">
+  <h1 class="display-4" style="color:black;">Welcome to our Bookstore</h1>
+  <p class="lead" style="color:black;">Explore an exciting world of literature and knowledge.</p>
+</header>
+
+  <div class="container mt-5">
+
+  <div class="text-center">
+    <% if auther_signed_in? %>
+      <%= link_to 'Explore', books_path, class: 'btn btn-primary' %>
+    <% else %>
+      <%= link_to 'Start Now', new_auther_session_path, class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>
+  <div class="container mt-5">
+  <h2 class="mb-4">Featured Books</h2>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card mb-4">
+         <%= image_tag('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBt6eQCuDMtt619S11M9igfOG36SzsR-_M7A&usqp=CAU', class: 'card-img-top', alt: 'Book 2') %>
+        <div class="card-body">
+          <h5 class="card-title">A Tale of Two Cities</h5>
+          <p class="card-text">Charles Dickens</p>
+          <p class="card-text">  Release date: 1859</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card mb-4">
+       <%= image_tag('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaTvUTxZfobz_tw2uFW4SoySD5CFx2-2TYww&usqp=CAU', class: 'card-img-top', alt: 'Book 2') %>
+        <div class="card-body">
+          <h5 class="card-title">The Little Prince</h5>
+          <p class="card-text">Antoine de Saint-Exupéry</p>
+          <p class="card-text">  Release date: 1943</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card mb-4">
+         <%= image_tag('https://selfpublishing.com/wp-content/uploads/2020/11/How-to-Write-a-Book-in-12-Simple-Steps-Free-Book-Template.png', class: 'card-img-top', alt: 'Book 2') %>
+        <div class="card-body">
+          <h5 class="card-title">Harry Potter and the Philosopher's Stone</h5>
+          <p class="card-text">J. K. Rowling</p>
+          <p class="card-text">  Release date: 1997</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+</body>
+
+ 
+  <footer class="bg-dark text-white text-center py-3">
+    <p>&copy; 2023 Your Bookstore</p>
+  </footer>
+
