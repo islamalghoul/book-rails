@@ -1,4 +1,15 @@
 <h1>All Authors</h1>
+<div class="row justify-content-center">
+  <div class="col-lg-6">
+    <%= form_for_filterrific @filterrific do |f| %>
+      <%= f.label :by_name %>
+      <%= f.text_field :by_name, class: 'form-control' %>
+      <br>
+      <%= f.submit 'Filter', class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>
+
 
 <table class="table table-striped">
   <thead>
