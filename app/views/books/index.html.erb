@@ -6,8 +6,8 @@
     <%= f.label :by_auther_name %>
     <%= f.text_field :by_auther_name %>
 
-    <%= f.label :by_release_date %>
-   <%= f.date_field :by_release_date, as: :date, value: f.object.try(:strftime,"%m/%d/%Y") %>
+    <%= f.label :search_query, "Release Date" %>
+<%= f.text_field :search_query %>
 
     <%= f.submit 'Filter', class: 'btn btn-primary' %>
   <% end %>

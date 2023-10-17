@@ -1,24 +1,25 @@
 class BooksController < ApplicationController
   before_action :set_book, only: %i[show edit update destroy]
   
-
-def index
-  @filterrific = initialize_filterrific(
-    Book,
-    params[:filterrific],
-    select_options: {
-      sorted_by: Book.options_for_sorted_by
-    }
-  )
-  @books = @filterrific.find
-
-
-  @books.each do |book|
-    book.release_date ||= Date.current
+  def index
+    @filterrific = initialize_filterrific(
+      Book,
+      params[:filterrific],
+      select_options: {
+        sorted_by: Book.options_for_sorted_by
+      }
+    )
+  
+    @books = @filterrific.find
+  
+    @books = @books.paginate(page: params[:page])
+  
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
-  @books = @books.paginate(page: params[:page])
-end
-
+  
   
 
   
