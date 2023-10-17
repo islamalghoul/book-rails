@@ -1,4 +1,14 @@
 <% if auther_signed_in? %>
+<br>
+<br>
+
+  <div class="text-center">
+<a href="/books.csv" class="btn btn-primary" download>Download AS CSV</a>
+</div>
+<br>
+<br>
+
+
   <%= form_for_filterrific @filterrific do |f| %>
     <%= f.label :by_name %>
     <%= f.text_field :by_name %>
@@ -11,6 +21,8 @@
 
     <%= f.submit 'Filter', class: 'btn btn-primary' %>
   <% end %>
+  <br>
+
   <table class="table table-striped table-bordered table-hover">
     <thead class="thead-dark">
       <tr>
@@ -40,8 +52,11 @@
   </table>
 
   <div class="text-center">
-    <%= will_paginate @books %> <!-- Pagination links -->
+    <%= will_paginate @books %> 
     <%= link_to 'New Book', new_book_path, class: "btn btn-secondary" %>
+    <%= link_to "Show All Books", books_path, class: 'btn btn-primary' %>
+
+
   </div>
 <% else %>
   <script>

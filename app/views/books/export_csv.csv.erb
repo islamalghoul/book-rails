@@ -1,0 +1,6 @@
+<% CSV.generate(headers: true) do |csv| %>
+  <% csv << ['Name', 'Release Date', 'Author'] %>
+  <% @books.each do |book| %>
+    <% csv << [book.name, book.release_date, book.auther.name] %>
+  <% end %>
+<% end %>
